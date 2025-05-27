@@ -42,3 +42,16 @@ Den färdiga applikationen ska ha en **snygg design** och vara **responsiv** så
 - **Responsivitet**:
   - Formuläret ska anpassa sig till olika skärmstorlekar (mobil, surfplatta, dator).
   - På mindre skärmar ska fälten staplas snyggt under varandra.
+
+🧩 Component Structure
+LoanForm.jsx – Main component (handles form state, submission, confirmation)
+
+PersonalInfo.jsx – Name, phone, age
+
+EmploymentInfo.jsx – Employment status, salary (with warning)
+
+LoanDetails.jsx – Amount, purpose, repayment years
+
+Comments.jsx – Additional comments
+
+Confirmation.jsx – Success message
