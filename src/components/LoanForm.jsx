@@ -13,7 +13,7 @@ const schema = yup.object().shape({
   phone: yup
     .string()
     .required('Phone number is required')
-    .matches(/^\+?\d{10,15}$/, 'Phone number must be 10-15 digits'), // Added phone format validation
+    .matches(/^\+?\d{10,15}$/, 'Phone number must be 10-15 digits'),
   age: yup
     .number()
     .typeError('Age must be a number')
@@ -67,7 +67,6 @@ const LoanForm = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  // Load localStorage data
   useEffect(() => {
     try {
       const saved = localStorage.getItem('loanForm');
@@ -76,11 +75,10 @@ const LoanForm = () => {
       }
     } catch (error) {
       console.error('Failed to load saved form data:', error);
-      localStorage.removeItem('loanForm'); // Clear invalid data
+      localStorage.removeItem('loanForm');
     }
   }, [reset]);
 
-  // Save to localStorage on value change
   useEffect(() => {
     let timeout;
     const subscription = watch((values) => {
@@ -102,30 +100,38 @@ const LoanForm = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      // Placeholder for real API call
-      const response = await fetch('/api/submit-loan', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: { 'Content-Type': 'application/json' },
-      });
-      if (!response.ok) {
-        throw new Error('Failed to submit application');
-      }
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       console.log('Application submitted:', data);
       setSubmitted(true);
       localStorage.removeItem('loanForm');
-      reset();
     } catch (error) {
       console.error('Submission error:', error);
       alert('Failed to submit application. Please try again.');
-      console.log('Application submitted:', data); // User feedback
+      console.log('Application submitted:', data);
     } finally {
       setLoading(false);
     }
   };
 
+  const handleNewApplication = () => {
+    setSubmitted(false);
+    reset({
+      name: '',
+      phone: '',
+      age: '',
+      employed: false,
+      salary: '',
+      amount: '',
+      purpose: '',
+      years: '',
+      comments: '',
+    });
+    localStorage.removeItem('loanForm');
+  };
+
   if (submitted && isSubmitSuccessful) {
-    return <Confirmation onNewApplication={() => setSubmitted(false)} />;
+    return <Confirmation onNewApplication={handleNewApplication} />;
   }
 
   return (
