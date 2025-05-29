@@ -1,4 +1,5 @@
 body {
-  background: linear-gradient(to right, #7546cd, #0322ac);
+  background: linear-gradient(to right, #4abee1cd, #c9c9d5);
   min-height: 100vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <div className='d-flex flex-column min-vh-100'>
-      <section className='bg-light py-5'>
+      <section className='py-5 bg-info-subtle'>
         <div className='container'>
           <div className='row align-items-center'>
             <div className='col-md-6 text-center text-md-start'>
@@ -20,7 +20,7 @@ export default function Home() {
               <img
                 src='/img/bank.jpg'
                 alt='Bank Services'
-                className='img-fluid rounded'
+                className='rounded img-fluid w-75'
               />
             </div>
           </div>
