@@ -149,7 +149,7 @@ const LoanForm = () => {
             <div className='d-grid'>
               <button
                 type='submit'
-                className='btn btn-primary'
+                className='btn btn-primary mb-2'
                 disabled={loading}
               >
                 {loading ? (
