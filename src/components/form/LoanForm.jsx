@@ -7,6 +7,7 @@ import EmploymentInfo from './EmploymentInfo';
 import LoanDetails from './LoanDetails';
 import Comments from './Comments';
 import Confirmation from './Confirmation';
+import { Link } from 'react-router-dom';
 
 const schema = yup.object().shape({
   name: yup.string().required('Name is required'),
@@ -137,6 +138,11 @@ const LoanForm = () => {
   return (
     <div className='container mt-5 mb-5'>
       <div className='card shadow-lg p-4'>
+        <div className='text-start'>
+          <Link to='/' type='button' className='btn btn-primary'>
+            Back
+          </Link>
+        </div>
         <h2 className='text-center mb-4'>Loan Application</h2>
 
         <FormProvider {...methods}>
