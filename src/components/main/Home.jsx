@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import bankImg from './img/bank.jpg';
+import bankImg from '../../img/bank.jpg';
 
 export default function Home() {
   return (
