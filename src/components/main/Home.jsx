@@ -18,7 +18,7 @@ export default function Home() {
             </div>
             <div className='col-md-6 d-none d-md-block'>
               <img
-                src='/img/bank.jpg'
+                src='./img/bank.jpg'
                 alt='Bank Services'
                 className='rounded img-fluid w-75'
               />
