@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import bankImg from './img/bank.jpg';
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
             </div>
             <div className='col-md-6 d-none d-md-block'>
               <img
-                src='/src/components/img/bank.jpg'
+                src={bankImg}
                 alt='Bank Services'
                 className='rounded img-fluid w-75'
               />
